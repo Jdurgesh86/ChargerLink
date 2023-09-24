@@ -1,0 +1,121 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .input-container {
+    margin-bottom: 20px; /* Add space below each input container */
+  }
+
+  .user-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 20px;
+  }
+  
+  .user-section {
+    margin-bottom: 40px;
+    padding: 45px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #007BFF;
+    margin-bottom: 20px;
+  }
+  
+  /* Additional styles for buttons and forms */
+  
+  button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  input[type="text"],
+  input[type="tel"],
+  input[type="number"],
+  select {
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="number"]:focus,
+  select:focus {
+    border-color: #007BFF;
+  }
+  
+  /* Attractive styles for tables */
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* Media query for responsiveness */
+  
+  @media (max-width: 600px) {
+    .user-container {
+      margin: 10px;
+      padding: 10px;
+    }
+  }
+  
+ #map-container {
+  height: 600px; /* Adjust the height as needed */
+  width: 100%; /* Adjust the width as needed */
+  position: relative;
+}
+
+#map {
+  height: 100%; /* Map takes the full height of the container */
+  width: 100%; /* Map takes the full width of the container */
+  position: absolute;
+  top: 0;
+  left: 0;
+}

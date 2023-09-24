@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Dashboard</title>
+        <link rel="stylesheet" href="css/user_dashboard.css">
+    </head>
+
+    <body>
+        <div class="user-container">
+            <h1>User Dashboard</h1>
+                <div class="user-container">
+                    <h1>Search Nearby EV Bunk</h1>
+                        <div class="user-section">
+                            <form id="searchForm">
+                                <div class="input-container">
+                                    <label for="latitude">Latitude</label>
+                                        <input type="text" id="latitude" name="latitude" placeholder="Enter Latitude" required>
+                                </div>
+
+                                <div class="input-container">
+                                    <label for="longitude">Longitude</label>
+                                        <input type="text" id="longitude" name="longitude" placeholder="Enter Longitude" required>
+                                </div>
+
+                                <div class="input-container">
+                                    <label for="distance">Search Distance (km)</label>
+                                        <input type="number" id="distance" name="distance" placeholder="Enter Search Distance" required>
+                                </div>
+
+                                <button type="submit">Search</button>
+
+                            </form>
+                        </div>
+                </div>
+        </div>
+
+        <div class="user-container">
+            <h1>View Bunk Details</h1>
+                <div class="user-section">
+                    <table class="ev-bunk-table" id="bunkTable">
+                        <thead>
+                            <tr>
+                                <th>Bunk Name</th>
+                                <th>Address</th>
+                                <th>Available Slots</th>
+                                <th>bunk Distance</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- Nearby bunk details here -->
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+
+        <div class="user-container">
+            <h1>Google Map Location</h1>
+                <div id="map-container">
+                    <div id="map"></div>
+                </div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-__9hp4r9IA1opAAmiX-HjN4AKSORz8A&libraries=places"></script>
+        </div>
+
+        <div class="user-container">
+            <h1><button id="fetchSlotDataBtn">view slot vacancy</button></h1>
+                <div class="user-section">
+                    <table class="slot-vacancy-table" id="slotTable">
+                        <thead>
+                            <tr>
+                                <th>Bunk Name</th>
+                                <th>Slot Name</th>
+                                <th>Charging Power (kW)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                                <!-- Slot Details here -->
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+
+        <script src="javaScript/user_dashboard.js"></script>
+    </body>
+</html>

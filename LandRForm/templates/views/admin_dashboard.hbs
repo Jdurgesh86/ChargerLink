@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EV Admin Dashboard</title>
+        <link rel="stylesheet" href="css/admin_dashboard.css">
+    </head>
+
+
+    <body>
+        <div class="dashboard-container">
+            <h1>Welcome, EV Admin!</h1>
+            <div class="dashboard-section-container">
+                <h2>Create EV Bunk </h2>
+                <form id="createBunkForm" action="createBunkForm" method="post">
+
+                    <div class="input-container">
+                        <label for="bunkName">Bunk Name</label>
+                            <input type="text" id="bunkName" name="bunkName" placeholder="Enter the Bunk Name" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="address">Address</label>
+                            <input type="text" id="address" name="address" placeholder="Enter the Bunk Address" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="mobile">Contact Number</label>
+                            <input type="tel" id="mobile" name="mobile" placeholder="Enter the Contact Number" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="latitude">Latitude</label>
+                            <input type="text" id="latitude" name="latitude" placeholder="Enter the Latitude" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="longitude">Longitude</label>
+                            <input type="text" id="longitude" name="longitude" placeholder="Enter the Longitude" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="slotCapacity">Slot Capacity</label>
+                            <input type="number" id="slotCapacity" name="slotCapacity" placeholder="Enter the Slot Capacity" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="chargingPower">Charging Power (kW)</label>
+                            <input type="number" id="chargingPower" name="chargingPower" placeholder="Enter the Charging Power" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="operator">Operator</label>
+                            <input type="text" id="operator" name="operator" placeholder="Enter the Operator" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="status">Status</label>
+                            <select id="status" name="status" required>
+                                <option value="" disabled selected>Select Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                    </div>
+
+                    <button type="submit">Create EV Bunk</button>
+                </form>
+            </div>
+
+
+
+
+            <div class="dashboard-section-container">
+                <h1>Manage Existing EV Bunk Details</h1>
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Bunk Name</th>
+                            <th>Address</th>
+                            <th>Available Slots</th>
+                            <th>Charging Power (kW)</th>
+                            <th>Operator</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bunkTable">
+                        <!-- whole Bunk Details here by javascript -->
+                    </tbody>
+
+                </table>
+
+                <div id="editPopup" class="popup">
+                    <div class="popup-content">
+                            <!-- Close button to close the popup -->
+                        <span class="close" onclick="closePopup()">&times;</span>
+                        <h2>Edit Bunk Details</h2>
+                            <form id="editForm" action="/editForm" method="post">
+
+                                <!-- Hidden input to store the selected bunk ID -->
+                                    <input type="hidden" id="popupBunkId" name="bunkId"><br><br>
+
+                                <label for="bunkName">Bunk Name:</label>
+                                    <input type="text" id="popupBunkName" name="bunkName" required><br><br>
+
+                                <label for="address">Address:</label>
+                                    <input type="text" id="popupAddress" name="address" required><br><br>
+
+                                <label for="availableSlots">Available Slots:</label>
+                                    <input type="text" id="popupAvailableSlots" name="availableSlots" required><br><br>
+
+                                <label for="chargingPower">Charging Power (kW):</label>
+                                    <input type="text" id="popupChargingPower" name="chargingPower" required><br><br>
+
+                                <label for="operator">Operator:</label>
+                                    <input type="text" id="popupOperator" name="operator" required><br><br>
+
+                                <label for="status">Status:</label>
+                                    <select id="popupStatus" name="status" required>
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
+                                    </select>
+
+                                <button type="submit">Save Changes</button>
+                            </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="dashboard-section-container">
+                <h1>Manage Recharge Slots for EV Bunk</h1>
+                <div class="bunk-selection">
+                    <label for="bunkSelect">Select EV Bunk:</label>
+                        <select id="bunkSelect">
+                            <!-- Bunks Options here by javascript -->
+                        </select>
+                </div>
+            
+
+            <div class="recharge-slots">
+                <h2>Existing Recharge Slots</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Slot Name</th>
+                            <th>Charging Power (kW)</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="rechargeSlotList">
+                        <!--  recharge slots ditails here taken from javascript -->
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div id="editRechargeSlotPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closeEditPopup()">&times;</span>
+                    <h2>Edit Recharge Slot</h2>
+                    <form id="editRechargeSlotForm" action="/editSlot" method="post">
+                        <div class="input-container">
+
+                            <!-- Hidden input to store the selected bunk ID -->
+                                <input type="hidden" id="editSlotId" name="SlotId"><br><br>  {{!--to edit the Existing slot details --}}
+                            <label for="editSlotName">Slot Name:</label>
+                                <input type="text" id="editSlotName" name="editSlotName" required>
+                        </div>
+
+                        <div class="input-container">
+                            <label for="editChargingPower">Charging Power (kW):</label>
+                                <input type="number" id="editChargingPower" name="editChargingPower" required>
+                        </div>
+
+                        <div class="input-container">
+                            <label for="editStatus">Status:</label>
+                                <select id="editStatus" name="editStatus" required>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                        </div>
+
+                        <button type="submit">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="add-slot">
+                <h2>Add Recharge Slot</h2>
+                <form id="addRechargeSlotForm" action="/addRechargeSlot" method="post">
+                    <div class="input-container">
+                        <label for="slotName">Slot Name</label>
+                            <input type="text" id="slotName" name="slotName" placeholder="Enter Slot Name" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="chargingPower">Charging Power (kW)</label>
+                            <input type="number" id="chargingPower" name="chargingPower" placeholder="Enter Charging Power" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="status">Status</label>
+                            <select id="status" name="status" required>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                    </div>
+
+                    <!-- Hidden input to store the selected bunk ID -->
+                        <input type="hidden" id="selectedBunk" name="bunk" value="">
+
+                    <button type="submit">Add Slot</button>
+                </form>
+            </div>
+    </div>
+        <script src="javaScript/admin_dashboard.js"></script>
+
+    </body>
+</html>
+
+

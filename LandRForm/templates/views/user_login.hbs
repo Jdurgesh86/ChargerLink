@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>User Login</title>
+		<link rel="stylesheet" href="css/user_login.css">
+	</head>
+
+	<body>
+		<div class="user-container">
+			<div class="form-container">
+			<h2>Login</h2>
+				<form id="loginForm" action="/UserLogin" method="post">
+					<div class="input-container">
+						<label for="loginUsername">Username</label>
+							<input type="text" id="loginUsername" name="loginUsername" placeholder="Enter your username" required>
+					</div>
+
+					<div class="input-container">
+						<label for="loginPassword">Password</label>
+							<input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" required>
+					</div>
+
+					<button type="submit">Login</button>
+
+				</form>
+				<div class="signup-link">
+					Don't have an account? <a href="/user_registration">Sign Up</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

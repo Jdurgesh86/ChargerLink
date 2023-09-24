@@ -1,0 +1,77 @@
+ /* CSS styles for the registration and login forms */
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+  }
+  
+  .user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    max-width: 400px;
+    width: 50cm;
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    color: #007BFF;
+  }
+  
+  .input-container {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input{
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  select{
+    
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 105%;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 14px 26px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .login-link a {
+    color: #007BFF;
+    text-decoration: none;
+  }

@@ -1,0 +1,54 @@
+body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the container */
+        .container {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/010/568/339/original/electric-car-at-charging-station-front-view-electric-car-silhouette-with-blue-glowing-on-dark-background-ev-concept-illustration-vector.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+            text-align:end;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style the heading */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+
+        }
+
+        /* Style the paragraph */
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Style the button container */
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Style the buttons */
+        .btn {
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }

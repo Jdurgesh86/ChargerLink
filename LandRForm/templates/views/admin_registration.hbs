@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>EV Admin Registration</title>
+		<link rel="stylesheet" href="css/admin_registration.css">
+	</head>
+
+	<body>
+  		<div class="registration-container">
+	  		<h1>EV Admin Registration</h1>
+	  			<form id="registerFormAdmin" action="/adminRegistration" method="POST">
+		  			<div class="input-container">
+			  			<label for="usernameAdmin">Username</label>
+			  				<input type="text" id="usernameAdmin" name="username" placeholder="Enter your username" required>
+		  			</div>
+
+		  			<div class="input-container">
+			  			<label for="emailAdmin">Email</label>
+			  				<input type="email" id="emailAdmin" name="email" placeholder="Enter your email" required>
+		  			</div>
+
+		  			<div class="input-container">
+			  			<label for="passwordAdmin">Password</label>
+			  				<input type="password" id="passwordAdmin" name="password" placeholder="Enter your password (min. 8 characters)" required>
+		  			</div>
+
+		  			<div class="input-container">
+			  			<label for="confirmPasswordAdmin">Confirm Password</label>
+			  				<input type="password" id="confirmPasswordAdmin" name="confirmPassword" placeholder="Confirm your password" required>
+		  			</div>
+
+		  			<div class="input-container">
+			  			<label for="fullNameAdmin">Full Name</label>
+			  				<input type="text" id="fullNameAdmin" name="fullName" placeholder="Enter your full name" required>
+		  			</div>
+
+		  			<div class="input-container">
+			  			<label for="companyAdmin">Company Name</label>
+			  				<input type="text" id="companyAdmin" name="company" placeholder="Enter your company name" required>
+		  			</div>
+
+		  			<button type="submit">Register</button>
+				</form>
+
+				<div class="login-link">
+					Already have an account? <a href="/admin_login">Login</a>
+	  			</div>
+  		</div>
+	</body>
+</html>
